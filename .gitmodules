@@ -1,0 +1,3 @@
+[submodule "ejemplos-pinia"]
+	path = ejemplos-pinia
+	url = git@github.com:MauricioTRP/ejemplos-pinia.git

@@ -61,4 +61,31 @@ describe('CounterComponent', () => {
 
     expect(contadorDespuesClick).toBeLessThan(contadorAntesClick)
   })
+
+  it('Existe un botón para aumentar 2 en 2', () => {
+    const btnAumentar = wrapper.find('#aumentar-2')
+
+    expect(btnAumentar.text()).toBe('+2')
+  })
+  it('Existe un botón para disminuir 2 en 2', () => {
+    const btnDisminuir = wrapper.find('#disminuir-2')
+
+    expect(btnDisminuir.text()).toBe('-2')
+  })
+  it('Disminuye el contador en dos al hacer click en el "-2"', async () => {
+    const contadorAntesClick = Number(wrapper.find('#contador').text())
+    const btnDisminuir2 = wrapper.find('#disminuir-2')
+    await btnDisminuir2.trigger('click')
+    const contadorDespuesClick = Number(wrapper.find('#contador').text())
+
+    expect(contadorDespuesClick).toEqual(contadorAntesClick - 2)
+  })
+  it('Aumenta en 2 al hacer click en +2', async () => {
+    const contadorAntesClick = Number(wrapper.find('#contador').text())
+    const btnAumentar2 = wrapper.find('#aumentar-2')
+    await btnAumentar2.trigger('click')
+    const contadorDespuesClick = Number(wrapper.find('#contador').text())
+
+    expect(contadorDespuesClick).toEqual(contadorAntesClick + 2)
+  })
 })

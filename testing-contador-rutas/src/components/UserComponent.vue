@@ -7,8 +7,10 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+const users = ref([])
 
+onMounted(() => {})
 /**
  * más logica para poblar la variable
  */
